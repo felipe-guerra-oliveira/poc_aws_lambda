@@ -9,6 +9,12 @@ phases:
        python: 3.9
     commands:
       - echo Starting install phase to run the build
+  build:
+    on-failure: ABORT
+    commands:
       - cd ./ec2manager-lambda-function
       - chmod +x build-ec2manager.sh && ./build-ec2manager.sh
       - cd .. && ls -la
+artifacts:
+  files:
+    - 'ec2-manager.zip'
