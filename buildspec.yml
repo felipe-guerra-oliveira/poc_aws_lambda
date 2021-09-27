@@ -9,4 +9,6 @@ phases:
        python: 3.9
     commands:
       - echo Starting install phase to run the build
-      - ls -la
+      - cd ./ec2manager-lambda-function
+      - chmod +x build-ec2manager.sh && ./build-ec2manager.sh
+      - cd .. && ls -la
