@@ -3,12 +3,13 @@ version: 0.2
 run-as: root
 
 phases:
- install:
+  install:
     on-failure: ABORT
     runtime-versions:
-       python: 3.9
+      python: 3.9
     commands:
       - echo Starting install phase to run the build
+      - pip install -r ec2manager-lambda-function/requirements.txt
   build:
     on-failure: ABORT
     commands:
